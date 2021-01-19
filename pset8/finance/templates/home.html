@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+    <table class="a">
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+
+    </tr>
+{% for item in items %}
+    <TR>
+       <TD>{{item.symbol}}</TD>
+       <TD>{{item.name}}</TD>
+       <TD>{{item['SUM(shares)']}}</TD>
+       <TD>{{item.price}}</TD>
+       <TD>${{item.total}}</TD>
+    </TR>
+{% endfor %}
+
+    <tr>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>${{cash}}</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>${{total}}</td>
+    </tr>
+
+</table>
+
+
+{% endblock %}

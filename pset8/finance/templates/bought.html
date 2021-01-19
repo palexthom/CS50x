@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+
+   <h1>You bought {{shares}} share(s) of {{dict.name}} ({{dict.symbol}}) for a total price of ${{dict.price * shares}}</h1>
+
+{% endblock %}

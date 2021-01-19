@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Pierre Hamy">
+
+        <title>Homepage project : Simple Ticketing</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/background.html">Background</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/specification.html">Specification</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/interface.html">Interface</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Corps de page -->
+      <main class="container">
+
+        <div class="starter-template">
+          <p class="lead">Here we'll describe how the ticketing system should work for front-end and back-end users. We will then provide basic and more advanced specifications.</p>
+          <h1>Using the ticketing system</h1>
+          <p class="lead">Users are identified with their email addresses. Anyone can create a ticketing service, the service "belongs" to the one who created it. Anyone with a link to a service can fill-in tickets.
+          <h2>Back-end users</h2>
+          <p class="lead">First, back-end users will setup the tool, choosing what fields the front-end users will have to fill for each ticket and what categories will they chose from to file the ticket. The ticketing system will then configure a database accordingly and provide a unique URL for the ticketing system. This URL will be the entrypoint for anyone needing to fill a ticket for that project.</p>
+          <p class="lead">A second URL is given to back-end users, that points to another interface that allows them to query the data from the database. They can add information/comments related to the ticket and mark it as solved, have access to stats regarding the tickets.</p>
+          <h2>Front-end users</h2>
+          <p class="lead">Following the URL given, the front-end users can fill in a new ticket using the fields cofigured. They can also access / update an old ticket to see its status. The front-end user is notified anytime one of his ticket is updated.</p>
+
+          <h1>Specification</h1>
+          <h2>Basics</h2>
+          <h3>Interfaces</h3>
+          <p class="lead">One interface for the configuration of the service by the backend user. He has to be able to fill in his email address, select what fields he wants the user to fill and can give a list of categories in which the user will file the tickets.</p>
+          <p class="lead">One interface for the front-end users. The user can either fill in a new ticket, or load and update an old ticket with its id.
+          <h3>Database</h3>
+          <p class="lead">When the back-end user sets the service up, a table is created in the database to store the content of the tickets that will be filled later.</p>
+          <h3>Email notifications</h3>
+          <p class="lead">Backend user is notified when the database is setup and receives a link to the service. Backend user is notified whenever a ticket is filled or updated.</p>
+          <p class="lead">Front-end user is notified when his ticket is created and received the unique ID of his ticket. Front end user is notified when one of his ticket is updated.</p>
+          <h2>Advanced / Other</h2>
+          <ul class="lead">
+            <li>How is the service deployed ? Where is it hosted ?</li>
+            <li>Authorizations: do the user need to be on an authorized list in order to access a service ?</li>
+            <li>Authentificatoin only with email is weak</li>
+            <li>Allow a user to search for all the tickets he created</li>
+            <li>Not one entrypoint/project but one OAuth access to the service, and the user can then fill tickets for every project he has the rights for.</li>
+            <li>API for end-users to create tickets ? API for creating a new ticketing service ? API to query the database of a project ?</li>
+          </ul>
+        </div>
+        <hr class="mb-4">
+        <div>
+          <button type="button" class="btn btn-outline-dark">Previous : Background</button>
+          <button type="button" class="btn btn-outline-dark">Next : Interface</button>
+      </div>
+      </main>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 Pierre HAMY</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/pierrehamy/">LinkedIn</a></li>
+          <li class="list-inline-item"><a href="https://github.com/palexthom">GitHub</a></li>
+        </ul>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>
